@@ -69,7 +69,9 @@ function sendJSONXMLHTTPRequest(url, objects, callback) {
 
 
 function clearCanvas(){
-    sendJSONXMLHTTPRequest('/clear', {}, (data)=>{
+    url = '/clear';
+    objects = {};
+    sendJSONXMLHTTPRequest(url, objects, (data)=>{
     })
 }
 
