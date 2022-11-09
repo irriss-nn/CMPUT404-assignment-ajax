@@ -51,11 +51,8 @@ function sendJSONXMLHTTPRequest(url, objects, callback) {
         }
     };
     //XXX: POST to a URL
-    if(url=='/world'){
-        xhr.open('GET', url)
-    }
-    else if(url=='/clear'){
-        xhr.open('GET', url)
+    if (objects=={}){
+        xhr.open('GET',url)
     }
     else{
         xhr.open('POST', url)
