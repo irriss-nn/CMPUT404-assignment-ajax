@@ -23,10 +23,27 @@
     "/>
     <script src="json2.js"></script>
   </head> 
+  <style>
+    .button1{
+     background-color:rgb(248, 145, 11);  
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+     border-radius:50%;
+     color:aliceblue;
+    }
+    .button1:hover{
+        background-color:rgb(13, 233, 233);
+        transition:0.4s
+    }
+    canvas {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+  </style>
   <body height="100%" bgcolor="#C4E2EC"  width="100%"> 
-      <button id="clear" onclick="clearCanvas()" style="background-color:rgb(248, 145, 11);  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);border-radius:50%;color:aliceblue">Clear</button>
-      <canvas id="c" width="100%" height="100%" style="-webkit-tap-highlight-color: transparent;"></canvas> 
+      <button class="button button1" onclick="clearCanvas()">Clear</button>
+      <canvas id="c" width="100%" height="100%" ></canvas> 
     <script>
+  
 var canvas = document.getElementById('c');
 var host = window.location.host;
 var context = canvas.getContext("2d");
