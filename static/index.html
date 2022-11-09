@@ -51,11 +51,12 @@ function sendJSONXMLHTTPRequest(url, objects, callback) {
         }
     };
     //XXX: POST to a URL
-    if (objects=={}){
-        xhr.open('GET',url)
-    }
-    else{
-        xhr.open('POST', url)
+    if (url == '/world') {
+        xhr.open('GET', url);
+    } else if (url =='/clear') {
+        xhr.open('GET', url);
+    } else { // update an entity
+        xhr.open('POST', url);
     }
     //XXX: set the mimetype and the accept headers!
     // Remember to use application/json !
@@ -64,13 +65,6 @@ function sendJSONXMLHTTPRequest(url, objects, callback) {
     xhr.send(JSON.stringify(objects))
 }
 
-
-function clearCanvas(){
-    url = '/clear';
-    objects = {};
-    sendJSONXMLHTTPRequest(url, objects, (data)=>{
-    })
-}
 
 world = {};
 
@@ -107,6 +101,14 @@ function clearFrame() {
 	fillRect(0,0,W,H);
     }
 
+}
+function clearCanvas(){
+    if (confirm('Everything will be cleared up!')){
+        url = '/clear';
+        objects = {};
+        sendJSONXMLHTTPRequest(url, objects, (data)=>{
+        })
+    }
 }
 
 // This actually draws the frame
